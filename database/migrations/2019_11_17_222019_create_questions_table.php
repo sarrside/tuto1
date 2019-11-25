@@ -17,13 +17,13 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('body');
+            $table->text('body');
             $table->unsignedInteger('views')->default(0);
             $table->unsignedInteger('answers')->default(0);
             $table->integer('votes')->default(0);
             $table->unsignedInteger('best_answer_id')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
