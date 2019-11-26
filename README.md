@@ -82,5 +82,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 composer require laravel/ui --dev
 php artisan ui vue --auth
 
-## create database 
+## create database
 mysql -u xelal -p -e "CREATE DATABASE tuto1"
+
+# pagination boostrap
+php artisan vendor:publish --tag=laravel-pagination
